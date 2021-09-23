@@ -1,0 +1,16 @@
+// "Exercices en langage C++", Claude Delannoy, page 107.
+// Definition de la classe vect en vue d'une utilisation par ex_9_7.cpp.
+
+#include "vect.h"
+
+vect::vect(int n)
+ { adr=new int[nelem=n];
+   for (int i=0; i<nelem; i++) adr[i]=0;
+ }
+vect::~vect()
+ { delete [] adr;
+ }
+int& vect::operator[](int i)
+ { if (i<0||i>nelem) i=0;
+   return adr[i];
+ }
